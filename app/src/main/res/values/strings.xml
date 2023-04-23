@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">blood_donation</string>
+    <string name="my_spinner_hint">Select an item</string>
 </resources>
