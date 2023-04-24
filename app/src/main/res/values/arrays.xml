@@ -10,4 +10,36 @@
         <item>O+</item>
         <item>O-</item>
     </string-array>
+    <string-array name="saudi_cities">
+        <item>Abha</item>
+        <item>Al Bahah</item>
+        <item>Al Hufuf</item>
+        <item>Al Kharj</item>
+        <item>Al Khobar</item>
+        <item>Al Majma\'ah</item>
+        <item>Al Qatif</item>
+        <item>Al Ula</item>
+        <item>Arar</item>
+        <item>Badr</item>
+        <item>Bisha</item>
+        <item>Buraydah</item>
+        <item>Dammam</item>
+        <item>Dhahran</item>
+        <item>Ha\'il</item>
+        <item>Jazan</item>
+        <item>Jeddah</item>
+        <item>Jubail</item>
+        <item>Khamis Mushait</item>
+        <item>Makkah</item>
+        <item>Medina</item>
+        <item>Najran</item>
+        <item>Rabigh</item>
+        <item>Rafha</item>
+        <item>Ras Tanura</item>
+        <item>Riyadh</item>
+        <item>Sakaka</item>
+        <item>Tabuk</item>
+        <item>Taif</item>
+        <item>Yanbu</item>
+    </string-array>
 </resources>

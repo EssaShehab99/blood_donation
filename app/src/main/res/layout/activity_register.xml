@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resgister"
+            android:text="Register"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="10dp"
             android:theme="@style/text_style"
@@ -35,7 +35,31 @@
             android:layout_marginVertical="10dp"
             android:hint="Name"
             android:background="@drawable/border_radius"
+            android:inputType="textPersonName"
+            android:theme="@style/text_style"
+            android:textColor="@color/primary"
+            android:paddingHorizontal="10dp" />
+        <EditText
+            android:id="@+id/email_et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:hint="Email"
+            android:background="@drawable/border_radius"
             android:inputType="textEmailAddress"
+            android:theme="@style/text_style"
+            android:textColor="@color/primary"
+            android:paddingHorizontal="10dp" />
+        <EditText
+            android:id="@+id/age_et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:hint="Age"
+            android:inputType="number"
+            android:background="@drawable/border_radius"
             android:theme="@style/text_style"
             android:textColor="@color/primary"
             android:paddingHorizontal="10dp" />
@@ -48,19 +72,52 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="10dp"/>
 
-        <EditText
-            android:id="@+id/email_et"
+        <Spinner
+            android:id="@+id/city_spinner"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:popupBackground="@color/white"
+            android:background="@drawable/spinner_background"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
-            android:hint="e-mail"
-            android:background="@drawable/border_radius"
-            android:inputType="textEmailAddress"
+            android:layout_marginVertical="10dp"/>
+        <CheckBox
+            android:id="@+id/has_illnesses_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content"
             android:theme="@style/text_style"
             android:textColor="@color/primary"
-            android:paddingHorizontal="10dp" />
+            android:text="Has Illnesses?" />
+        <TextView
+            android:id="@+id/gender_hint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/text_style"
+            android:layout_marginHorizontal="20dp"
+            android:text="Select Gender" />
+        <RadioGroup
+            android:id="@+id/gender_radio_group"
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/male_radio_button"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_style"
+                android:textColor="@color/primary"
+                android:text="Male" />
 
+            <RadioButton
+                android:id="@+id/female_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/text_style"
+                android:textColor="@color/primary"
+                android:text="Female" />
+        </RadioGroup>
         <EditText
             android:id="@+id/password_et"
             android:layout_width="match_parent"
@@ -76,14 +133,14 @@
             android:paddingHorizontal="10dp" />
 
         <Button
-            android:id="@+id/sign_in_btn"
+            android:id="@+id/register_btn"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginHorizontal="20dp"
             android:theme="@style/text_style"
             android:layout_marginVertical="10dp"
             android:background="@drawable/border_radius"
-            android:text="Sign In"
+            android:text="Register"
             android:gravity="center"
             android:textSize="12sp"
             android:textColor="@color/white"
@@ -94,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="10dp"
-            android:text="have not Account? Sign Up"
+            android:text="Have Account? Login"
             android:theme="@style/text_style" />
     </LinearLayout>
 </ScrollView>
