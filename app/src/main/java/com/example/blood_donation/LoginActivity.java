@@ -30,7 +30,11 @@ public class LoginActivity extends AppCompatActivity {
             else if (TextUtils.isEmpty(password.getText()))
                 password.setError("Enter value");
             else {
-                login();
+                if(String.valueOf(email.getText()).equals("admin@gmail.com")&&String.valueOf(password.getText()).equals("admin")){
+                    startActivity(new Intent(LoginActivity.this, UsersActivity.class));
+                    finish();
+                }
+                else login();
             }
         });
         findViewById(R.id.not_have_account).setOnClickListener(v -> {

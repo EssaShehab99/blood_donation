@@ -15,6 +15,7 @@
        <LinearLayout
            android:layout_height="wrap_content"
            android:layout_width="match_parent"
+           android:background="@color/background"
            android:orientation="horizontal"
            android:padding="10dp">
 
@@ -29,19 +30,36 @@
                 android:fontFamily="@font/cairobold"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
+                android:textColor="@color/primary"
                 android:textStyle="bold" />
-            <TextView
-                android:id="@+id/blood_type"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:fontFamily="@font/cairoregular"
                 android:layout_height="wrap_content"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/blood_type"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/cairoregular"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/phone_num"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/cairoregular"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp" />
+            </LinearLayout>
         </LinearLayout>
 
-           <TextView
-               android:id="@+id/done_button"
+           <Button
+               android:id="@+id/call_button"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:padding="10dp"
                android:fontFamily="@font/cairoregular"
                android:layout_gravity="center"
                android:text="Call" />
