@@ -1,13 +1,11 @@
 package com.example.blood_donation.pdo;
 
 import com.example.blood_donation.models.User;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import org.json.JSONException;
-
-import java.util.Map;
 import java.util.Objects;
 
 public class UserPDO {
@@ -49,7 +47,7 @@ public class UserPDO {
                 .addOnSuccessListener(querySnapshot -> {
                     if (!querySnapshot.isEmpty()) {
                         DocumentSnapshot documentSnapshot = querySnapshot.getDocuments().get(0);
-                        User user = User.fromMap(Objects.requireNonNull(documentSnapshot.getData()), documentSnapshot.getId());
+                        user = User.fromMap(Objects.requireNonNull(documentSnapshot.getData()), documentSnapshot.getId());
                         callback.onSuccess(user);
                     } else {
                         callback.onFailure(new Exception("Email or password not correct"));
@@ -57,6 +55,15 @@ public class UserPDO {
                 })
                 .addOnFailureListener(callback::onFailure);
     }
-
+    public static void update(User user, OnResultCallback<String> callback) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(UserPDO.user.id);
+        userRef.update(user.toMap())
+                .addOnSuccessListener(aVoid -> {
+                    UserPDO.user = user;
+                    callback.onSuccess(null);
+                })
+                .addOnFailureListener(callback::onFailure);
+    }
 
 }

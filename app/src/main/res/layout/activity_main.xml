@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,79 +7,212 @@
     android:background="@color/background"
     android:orientation="vertical"
     tools:context=".MainActivity">
-    <Toolbar
-        android:id="@+id/toolbar"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/teal_700"
-        android:theme="@style/MyActionButtonOverflow"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-        <TextView
-            android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/cairoregular"
-            android:textSize="18sp"
-            android:text="My information" />
-    </Toolbar>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/teal_700"
+                android:theme="@style/MyActionButtonOverflow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairoregular"
+                    android:text="My information"
+                    android:textSize="18sp" />
+            </Toolbar>
+
+            <ImageView
+                android:id="@+id/icon_user"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/border_shape"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name:" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Email:" />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Phone:" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Blood Type:" />
+
+                <TextView
+                    android:id="@+id/bloodType"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Has illnesses:" />
+
+
+                <TextView
+                    android:id="@+id/hasIllnesses"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Gender:" />
+
+                <TextView
+                    android:id="@+id/gender"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="Age:" />
+
+                <TextView
+                    android:id="@+id/age"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="@color/primary" />
+
+                <TextView
+                    style="@style/header_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:text="City" />
+
+                <TextView
+                    android:id="@+id/city"
+                    style="@style/text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/name"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name" />
-
-        <TextView
-            android:id="@+id/email"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email" />
-
-        <TextView
-            android:id="@+id/bloodType"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Blood type" />
-
-
-        <TextView
-            android:id="@+id/hasIllnesses"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Has illnesses" />
-
-        <TextView
-            android:id="@+id/gender"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Gender" />
-
-        <TextView
-            android:id="@+id/age"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Age" />
-
-        <TextView
-            android:id="@+id/city"
-            style="@style/text_style"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="City" />
-
-
-    </LinearLayout>
-
-</LinearLayout>
+        android:src="@drawable/baseline_edit_24"
+        android:backgroundTint="@color/teal_700"
+        app:tint="@color/white"
+        android:onClick="update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
