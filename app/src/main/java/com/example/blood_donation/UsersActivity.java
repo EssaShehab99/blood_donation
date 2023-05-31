@@ -51,6 +51,22 @@ public class UsersActivity extends AppCompatActivity {
                         Shared.showSnackBar(findViewById(android.R.id.content), "Phone number not available");
                     }
                 });
+                myAdapter.setOnDeleteButtonClickListener(user -> {
+                    UserPDO.delete(user.email, new OnResultCallback<String>() {
+                        @Override
+                        public void onSuccess(String result) {
+                            Shared.showSnackBar(findViewById(android.R.id.content), "Success Delete");
+                            fetchUsers();
+
+                        }
+
+                        @Override
+                        public void onFailure(Exception exception) {
+                            Shared.showSnackBar(findViewById(android.R.id.content), "Error");
+
+                        }
+                    });
+                });
                 recyclerView.setAdapter(myAdapter);
 
             }

@@ -1,9 +1,11 @@
 package com.example.blood_donation.pdo;
 
 import com.example.blood_donation.models.User;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
@@ -64,6 +66,29 @@ public class UserPDO {
                 .addOnSuccessListener(aVoid -> {
                     UserPDO.user = user;
                     callback.onSuccess(null);
+                })
+                .addOnFailureListener(callback::onFailure);
+    }
+    public static void delete(String email, OnResultCallback<String> callback) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference usersRef = db.collection("users");
+
+        // Query for the user with the specified email
+        Query query = usersRef.whereEqualTo("email", email).limit(1);
+        query.get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    if (!queryDocumentSnapshots.isEmpty()) {
+                        // Delete the user document
+                        DocumentSnapshot userSnapshot = queryDocumentSnapshots.getDocuments().get(0);
+                        userSnapshot.getReference().delete()
+                                .addOnSuccessListener(aVoid -> {
+                                    callback.onSuccess("User deleted successfully");
+                                })
+                                .addOnFailureListener(callback::onFailure);
+                    } else {
+                        // User with the specified email not found
+                        callback.onSuccess("User not found");
+                    }
                 })
                 .addOnFailureListener(callback::onFailure);
     }

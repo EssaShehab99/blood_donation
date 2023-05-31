@@ -20,6 +20,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
     List<User> userList;
     private Context context;
     private static OnCallButtonClickListener onCallButtonClickListener;
+    private static OnDeleteButtonClickListener onDeleteButtonClickListener;
 
     public UsersAdapter(Context context, List<User> userList) {
         this.context = context;
@@ -31,6 +32,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
         private TextView bloodType;
         private TextView phone;
         private final Button callButton;
+        private final Button deleteButton;
         private User user;
 
         public MyViewHolder(View itemView) {
@@ -39,6 +41,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
             bloodType = itemView.findViewById(R.id.blood_type);
             phone = itemView.findViewById(R.id.phone_num);
             callButton = itemView.findViewById(R.id.call_button);
+            deleteButton = itemView.findViewById(R.id.delete_button);
         }
 
         void setName(String value) {
@@ -76,6 +79,11 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
                 onCallButtonClickListener.onCallButtonClick(user);
             }
         });
+        holder.deleteButton.setOnClickListener(v -> {
+            if (onDeleteButtonClickListener != null) {
+                onDeleteButtonClickListener.onCallButtonClick(user);
+            }
+        });
     }
 
     @Override
@@ -86,8 +94,14 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
     public void setOnCallButtonClickListener(OnCallButtonClickListener clickListener) {
         UsersAdapter.onCallButtonClickListener = clickListener;
     }
+    public void setOnDeleteButtonClickListener(OnDeleteButtonClickListener clickListener) {
+        UsersAdapter.onDeleteButtonClickListener = clickListener;
+    }
 
     public interface OnCallButtonClickListener {
+        void onCallButtonClick(User user);
+    }
+    public interface OnDeleteButtonClickListener {
         void onCallButtonClick(User user);
     }
 

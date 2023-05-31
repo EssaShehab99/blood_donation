@@ -55,14 +55,28 @@
             </LinearLayout>
         </LinearLayout>
 
-           <Button
-               android:id="@+id/call_button"
+           <LinearLayout
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:padding="10dp"
-               android:fontFamily="@font/cairoregular"
-               android:layout_gravity="center"
-               android:text="Call" />
+               android:orientation="horizontal">
+               <Button
+                   android:id="@+id/call_button"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="10dp"
+                   android:fontFamily="@font/cairoregular"
+                   android:layout_gravity="center"
+                   android:text="Call" />
+               <Button
+                   android:id="@+id/delete_button"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:padding="10dp"
+                   android:layout_marginHorizontal="5dp"
+                   android:fontFamily="@font/cairoregular"
+                   android:layout_gravity="center"
+                   android:text="Delete" />
+           </LinearLayout>
        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
